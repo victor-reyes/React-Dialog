@@ -27,8 +27,8 @@ export function Dialog({
 
   return (
     <div
-      className={`fixed w-full h-screen bg-slate-800 bg-opacity-60 backdrop-blur-sm
-    ${showDialog ? "" : "hidden"}`}
+      className={`fixed inset-0 w-screen h-screen bg-slate-800 bg-opacity-60 backdrop-blur-sm
+        ${showDialog ? "" : "hidden"}`}
     >
       <dialog ref={dialog} className="w-96 px-8 py-4 rounded-lg">
         <div className="flex flex-col gap-4 justify-between">
