@@ -25,6 +25,8 @@ export function Dialog({
   const show = () => dialog.current?.showModal();
   const close = () => dialog.current?.close();
 
+  document.body.style.overflow = `${showDialog ? "hidden" : "auto"}`;
+
   return (
     <div
       className={`fixed w-full h-screen bg-slate-800 bg-opacity-60 backdrop-blur-sm
