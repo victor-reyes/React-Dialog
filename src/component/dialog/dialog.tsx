@@ -3,9 +3,17 @@ import { ReactNode, useEffect, useRef } from "react";
 type Props = {
   title: string;
   showDialog: boolean;
+  onOk?: () => void;
+  onClose?: () => void;
   children?: [ReactNode] | ReactNode;
 };
-export function Dialog({ title, showDialog, children: content }: Props) {
+export function Dialog({
+  title,
+  showDialog,
+  onOk,
+  onClose,
+  children: content,
+}: Props) {
   const dialog = useRef<HTMLDialogElement | null>(null);
 
   useEffect(() => {
@@ -21,6 +29,10 @@ export function Dialog({ title, showDialog, children: content }: Props) {
         <h1>{title}</h1>
       </header>
       <main>{content}</main>
+      <div className="flex gap-4 justify-between">
+        <button onClick={onOk}>Ok</button>
+        <button onClick={onClose}>Close</button>
+      </div>
     </dialog>
   );
 }
