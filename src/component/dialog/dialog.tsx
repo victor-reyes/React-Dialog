@@ -18,9 +18,7 @@ export function Dialog({
 }: Props) {
   const dialog = useRef<HTMLDialogElement | null>(null);
 
-  useEffect(() => {
-    showDialog ? show() : close();
-  }, [showDialog]);
+  useEffect(() => (showDialog ? show() : close()), [showDialog]);
 
   const show = () => dialog.current?.showModal();
   const close = () => dialog.current?.close();
