@@ -20,7 +20,7 @@ export function Dialog({
     showDialog ? show() : close();
   }, [showDialog]);
 
-  const show = () => dialog.current?.show();
+  const show = () => dialog.current?.showModal();
   const close = () => dialog.current?.close();
 
   return (
