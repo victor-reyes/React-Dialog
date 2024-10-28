@@ -4,14 +4,14 @@ type Props = {
   title: string;
   showDialog: boolean;
   onOk?: () => void;
-  onClose?: () => void;
+  onCancel?: () => void;
   children?: [ReactNode] | ReactNode;
 };
 export function Dialog({
   title,
   showDialog,
   onOk,
-  onClose,
+  onCancel,
   children: content,
 }: Props) {
   const dialog = useRef<HTMLDialogElement | null>(null);
@@ -31,7 +31,7 @@ export function Dialog({
       <main>{content}</main>
       <div className="flex gap-4 justify-between">
         <button onClick={onOk}>Ok</button>
-        <button onClick={onClose}>Close</button>
+        <button onClick={onCancel}>Cancel</button>
       </div>
     </dialog>
   );
