@@ -3,6 +3,10 @@ import { Dialog } from "./component/dialog/dialog";
 function App() {
   return (
     <div className="min-h-screen min-w-screen bg-slate-200 ">
+      <Dialog title="Warning!">
+        <div>Zombie are attacking us!</div>
+      </Dialog>
+
       <article className="flex flex-col gap-8 p-32">
         <section className="flex gap-8">
           <p>
